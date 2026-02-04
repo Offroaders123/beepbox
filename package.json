@@ -18,5 +18,8 @@
 	},
 	"dependencies": {
 		"solid-js": "^1.9.11"
+	},
+	"peerDependencies": {
+		"imperative-html": "^0.1.2"
 	}
 }
