@@ -1,4 +1,7 @@
-let editor;
+import type * as Beepbox from "../editor/index.js";
+declare var beepbox: typeof Beepbox;
+
+let editor: Beepbox.SongEditor;
 
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|android|ipad|playbook|silk/i.test(navigator.userAgent) ) {
 	document.querySelector<HTMLParagraphElement>("#introduction")!.innerHTML = "BeepBox is an online tool for sketching and sharing instrumental music. Make sure that your volume is turned up, then press the play button!";
