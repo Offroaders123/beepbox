@@ -1,4 +1,6 @@
-let editor: import("../editor/index.js").SongEditor;
+declare global {
+	var editor: import("../editor/index.js").SongEditor;
+}
 
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|android|ipad|playbook|silk/i.test(navigator.userAgent) ) {
 	document.querySelector<HTMLParagraphElement>("#introduction")!.innerHTML = "BeepBox is an online tool for sketching and sharing instrumental music. Make sure that your volume is turned up, then press the play button!";
@@ -28,7 +30,7 @@ function browserHasRequiredFeatures(): boolean {
 if (browserHasRequiredFeatures()) {
 	// Go ahead and load js beepbox editor interface:
 	import("../editor/index.js").then(beepbox => {
-		editor = new beepbox.SongEditor(document.querySelector<HTMLDivElement>("#beepboxEditorContainer")!);
+		window.editor = new beepbox.SongEditor(document.querySelector<HTMLDivElement>("#beepboxEditorContainer")!);
 	});
 } else {
 	document.querySelector<HTMLDivElement>("#beepboxEditorContainer")!.innerHTML = "Sorry, BeepBox doesn't support your browser. Try a recent version of Chrome, Firefox, Edge, Safari, or Opera.";
