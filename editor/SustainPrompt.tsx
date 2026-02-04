@@ -2,13 +2,10 @@
 
 import {Config} from "../synth/SynthConfig.js";
 import {Instrument} from "../synth/synth.js";
-import {HTML} from "imperative-html/dist/esm/elements-strict.js";
 import {SongDocument} from "./SongDocument.js";
 import {Prompt} from "./Prompt.js";
 import {ChangeGroup} from "./Change.js";
 import {ChangeStringSustainType} from "./changes.js";
-
-const {button, div, h2, p, select, option} = HTML;
 
 export class SustainPrompt implements Prompt {
 	private readonly _typeSelect: HTMLSelectElement = select({style: "width: 100%;"},

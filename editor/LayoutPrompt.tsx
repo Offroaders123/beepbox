@@ -3,9 +3,6 @@
 import {SongDocument} from "./SongDocument.js";
 import {Layout} from "./Layout.js";
 import {Prompt} from "./Prompt.js";
-import {HTML, SVG} from "imperative-html/dist/esm/elements-strict.js";
-
-const {button, label, div, form, h2, input} = HTML;
 
 export class LayoutPrompt implements Prompt {
 	private readonly _fileInput: HTMLInputElement = input({type: "file", accept: ".json,application/json,.mid,.midi,audio/midi,audio/x-midi"});

@@ -1,6 +1,5 @@
 // Copyright (c) John Nesky and contributing authors, distributed under the MIT license, see accompanying the LICENSE.md file.
 
-import {HTML} from "imperative-html/dist/esm/elements-strict.js";
 import {ColorConfig} from "./ColorConfig.js";
 
 export class Layout {

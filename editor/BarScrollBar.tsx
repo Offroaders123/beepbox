@@ -2,7 +2,6 @@
 
 import {SongDocument} from "./SongDocument.js";
 import {ColorConfig} from "./ColorConfig.js";
-import {HTML, SVG} from "imperative-html/dist/esm/elements-strict.js";
 import {EasyPointers} from "./EasyPointers.js";
 
 export class BarScrollBar {

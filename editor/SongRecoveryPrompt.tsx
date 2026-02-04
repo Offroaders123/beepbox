@@ -3,9 +3,6 @@
 import {SongDocument} from "./SongDocument.js";
 import {RecoveredSong, RecoveredVersion, SongRecovery, versionToKey} from "./SongRecovery.js";
 import {Prompt} from "./Prompt.js";
-import {HTML} from "imperative-html/dist/esm/elements-strict.js";
-
-const {button, div, h2, p, select, option, iframe} = HTML;
 
 export class SongRecoveryPrompt implements Prompt {
 	private readonly _songContainer: HTMLDivElement = div();

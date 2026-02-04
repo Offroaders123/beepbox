@@ -5,7 +5,6 @@ import {prettyNumber} from "./EditorConfig.js";
 import {ColorConfig} from "./ColorConfig.js";
 import {NotePin, Note, makeNotePin, Pattern, Instrument} from "../synth/synth.js";
 import {SongDocument} from "./SongDocument.js";
-import {HTML, SVG} from "imperative-html/dist/esm/elements-strict.js";
 import {EasyPointers, Point2d} from "./EasyPointers.js";
 import {ChangeSequence, UndoableChange} from "./Change.js";
 import {ChangeChannelBar, ChangeDragSelectedNotes, ChangeEnsurePatternExists, ChangeNoteTruncate, ChangeNoteAdded, ChangePatternSelection, ChangePinTime, ChangeSizeBend, ChangePitchBend, ChangePitchAdded} from "./changes.js";

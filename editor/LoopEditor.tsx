@@ -2,7 +2,6 @@
 
 import {ColorConfig} from "./ColorConfig.js";
 import {SongDocument} from "./SongDocument.js";
-import {HTML, SVG} from "imperative-html/dist/esm/elements-strict.js";
 //import {EasyPointers} from "./EasyPointers.js";
 import {ChangeLoop, ChangeChannelBar} from "./changes.js";
 

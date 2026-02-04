@@ -3,7 +3,6 @@
 import {Pattern} from "../synth/synth.js";
 import {ColorConfig, ChannelColors} from "./ColorConfig.js";
 import {SongDocument} from "./SongDocument.js";
-import {HTML} from "imperative-html/dist/esm/elements-strict.js";
 
 export class Box {
 	private readonly _text: Text = document.createTextNode("");

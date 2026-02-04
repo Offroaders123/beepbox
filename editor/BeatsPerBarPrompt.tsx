@@ -1,13 +1,10 @@
 // Copyright (c) John Nesky and contributing authors, distributed under the MIT license, see accompanying the LICENSE.md file.
 
 import {Config} from "../synth/SynthConfig.js";
-import {HTML} from "imperative-html/dist/esm/elements-strict.js";
 import {SongDocument} from "./SongDocument.js";
 import {Prompt} from "./Prompt.js";
 import {ChangeBeatsPerBar} from "./changes.js";
 import {ColorConfig} from "./ColorConfig.js";
-
-const {button, div, span, h2, input, br, select, option} = HTML;
 
 export class BeatsPerBarPrompt implements Prompt {
 	private readonly _beatsStepper: HTMLInputElement = input({style: "width: 3em; margin-left: 1em;", type: "number", step: "1"});

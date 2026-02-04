@@ -5,13 +5,10 @@ import {NotePin, Note, makeNotePin, Pattern, Instrument, Channel, Song, Synth} f
 import {Preset, EditorConfig} from "./EditorConfig.js";
 import {SongDocument} from "./SongDocument.js";
 import {Prompt} from "./Prompt.js";
-import {HTML} from "imperative-html/dist/esm/elements-strict.js";
 import {ChangeGroup} from "./Change.js";
 import {removeDuplicatePatterns, ChangeSong, ChangeReplacePatterns} from "./changes.js";
 import {AnalogousDrum, analogousDrumMap, MidiChunkType, MidiFileFormat, MidiEventType, MidiControlEventMessage, MidiMetaEventMessage, MidiRegisteredParameterNumberMSB, MidiRegisteredParameterNumberLSB, midiVolumeToVolumeMult, midiExpressionToVolumeMult} from "./Midi.js";
 import {ArrayBufferReader} from "./ArrayBufferReader.js";
-
-const {button, p, div, h2, input} = HTML;
 
 export class ImportPrompt implements Prompt {
 	private readonly _fileInput: HTMLInputElement = input({type: "file", accept: ".json,application/json,.mid,.midi,audio/midi,audio/x-midi"});

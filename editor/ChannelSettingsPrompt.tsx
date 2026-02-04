@@ -1,13 +1,10 @@
 // Copyright (c) John Nesky and contributing authors, distributed under the MIT license, see accompanying the LICENSE.md file.
 
 import {Config} from "../synth/SynthConfig.js";
-import {HTML} from "imperative-html/dist/esm/elements-strict.js";
 import {SongDocument} from "./SongDocument.js";
 import {Prompt} from "./Prompt.js";
 import {ChangeGroup} from "./Change.js";
 import {ChangePatternsPerChannel, ChangeInstrumentsFlags, ChangeChannelCount} from "./changes.js";
-
-const {button, div, label, br, h2, input} = HTML;
 
 export class ChannelSettingsPrompt implements Prompt {
 	private readonly _patternsStepper: HTMLInputElement = input({style: "width: 3em; margin-left: 1em;", type: "number", step: "1"});

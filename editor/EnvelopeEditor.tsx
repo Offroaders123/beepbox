@@ -4,7 +4,6 @@ import {InstrumentType, Config} from "../synth/SynthConfig.js";
 import {Instrument} from "../synth/synth.js";
 import {SongDocument} from "./SongDocument.js";
 import {ChangeSetEnvelopeTarget, ChangeSetEnvelopeType, ChangeRemoveEnvelope} from "./changes.js";
-import {HTML} from "imperative-html/dist/esm/elements-strict.js";
 
 export class EnvelopeEditor {
 	public readonly container: HTMLElement = HTML.div({class: "envelopeEditor"});

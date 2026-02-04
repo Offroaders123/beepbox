@@ -2,7 +2,6 @@
 
 import {BeepBoxOption, DictionaryArray, toNameMap} from "../synth/SynthConfig.js";
 import {Song} from "../synth/synth.js";
-import {HTML} from "imperative-html/dist/esm/elements-strict.js";
 
 export interface ChannelColors extends BeepBoxOption {
 	readonly secondaryChannel: string;

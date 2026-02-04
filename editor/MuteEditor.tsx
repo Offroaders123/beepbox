@@ -1,7 +1,6 @@
 // Copyright (c) John Nesky and contributing authors, distributed under the MIT license, see accompanying the LICENSE.md file.
 
 import {SongDocument} from "./SongDocument.js";
-import {HTML} from "imperative-html/dist/esm/elements-strict.js";
 import {ColorConfig} from "./ColorConfig.js";
 import {ChannelRow} from "./ChannelRow.js";
 

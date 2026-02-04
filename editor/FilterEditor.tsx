@@ -6,7 +6,6 @@ import {ColorConfig} from "./ColorConfig.js";
 import {FilterCoefficients, FrequencyResponse} from "../synth/filtering.js";
 import {FilterSettings, FilterControlPoint, Instrument} from "../synth/synth.js";
 import {SongDocument} from "./SongDocument.js";
-import {HTML, SVG} from "imperative-html/dist/esm/elements-strict.js";
 import {EasyPointers, Point2d} from "./EasyPointers.js";
 import {ChangeSequence, UndoableChange} from "./Change.js";
 import {ChangeFilterAddPoint, ChangeFilterMovePoint} from "./changes.js";

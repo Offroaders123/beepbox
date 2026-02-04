@@ -1,10 +1,7 @@
 // Copyright (c) John Nesky and contributing authors, distributed under the MIT license, see accompanying the LICENSE.md file.
 
-import {HTML} from "imperative-html/dist/esm/elements-strict.js";
 import {Prompt} from "./Prompt.js";
 import {SongDocument} from "./SongDocument.js";
-
-const {button, div, p, h2} = HTML;
 
 export class TipPrompt implements Prompt {
 	private readonly _closeButton: HTMLButtonElement = button({class: "cancelButton"});

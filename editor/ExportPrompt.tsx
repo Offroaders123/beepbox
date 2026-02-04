@@ -6,12 +6,9 @@ import {ColorConfig} from "./ColorConfig.js";
 import {Preset, EditorConfig} from "./EditorConfig.js";
 import {SongDocument} from "./SongDocument.js";
 import {Prompt} from "./Prompt.js";
-import {HTML} from "imperative-html/dist/esm/elements-strict.js";
 import {SongRenderer} from "./SongRenderer.js";
 import {ArrayBufferWriter} from "./ArrayBufferWriter.js";
 import {MidiChunkType, MidiFileFormat, MidiControlEventMessage, MidiEventType, MidiMetaEventMessage, MidiRegisteredParameterNumberMSB, MidiRegisteredParameterNumberLSB, volumeMultToMidiVolume, volumeMultToMidiExpression, defaultMidiPitchBend, defaultMidiExpression} from "./Midi.js";
-
-const {button, div, h2, input, progress, select, option} = HTML;
 
 function lerp(low: number, high: number, t: number): number {
 	return low + t * (high - low);

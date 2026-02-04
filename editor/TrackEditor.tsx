@@ -3,7 +3,6 @@
 import {ColorConfig} from "./ColorConfig.js";
 import {SongDocument} from "./SongDocument.js";
 import {ChannelRow} from "./ChannelRow.js";
-import {HTML, SVG} from "imperative-html/dist/esm/elements-strict.js";
 import {EasyPointers, Point2d} from "./EasyPointers.js";
 
 export class TrackEditor {

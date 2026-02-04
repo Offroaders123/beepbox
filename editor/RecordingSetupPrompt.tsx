@@ -4,12 +4,9 @@ import {Config} from "../synth/SynthConfig.js";
 import {ctrlSymbol, ctrlName} from "./EditorConfig.js";
 import {SongDocument} from "./SongDocument.js";
 import {Prompt} from "./Prompt.js";
-import {HTML} from "imperative-html/dist/esm/elements-strict.js";
 import {ColorConfig} from "./ColorConfig.js";
 import {KeyboardLayout} from "./KeyboardLayout.js";
 import {Piano} from "./Piano.js";
-
-const {button, label, div, p, a, h2, input, select, option} = HTML;
 
 export class RecordingSetupPrompt implements Prompt {
 	private readonly _keyboardMode: HTMLSelectElement = select({style: "width: 100%;"},
