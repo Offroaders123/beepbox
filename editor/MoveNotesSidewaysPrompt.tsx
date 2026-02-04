@@ -67,13 +67,13 @@ export class MoveNotesSidewaysPrompt implements Prompt {
 	}
 	
 	private _whenKeyPressed = (event: KeyboardEvent): void => {
-		if ((<Element> event.target).tagName != "BUTTON" && event.keyCode == 13) { // Enter key
+		if ((event.target as Element).tagName != "BUTTON" && event.keyCode == 13) { // Enter key
 			this._saveChanges();
 		}
 	}
 	
 	private static _validateNumber(event: Event): void {
-		const input: HTMLInputElement = <HTMLInputElement>event.target;
+		const input: HTMLInputElement = event.target as HTMLInputElement;
 		let value: number = +input.value;
 		value = Math.round(value * Config.partsPerBeat) / Config.partsPerBeat;
 		value = Math.round(value * 100) / 100;

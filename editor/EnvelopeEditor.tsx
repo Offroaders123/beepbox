@@ -25,8 +25,8 @@ export class EnvelopeEditor {
 	}
 	
 	private _onChange = (event: Event): void => {
-		const targetSelectIndex: number = this._targetSelects.indexOf(<any> event.target);
-		const envelopeSelectIndex: number = this._envelopeSelects.indexOf(<any> event.target);
+		const targetSelectIndex: number = this._targetSelects.indexOf(event.target as any);
+		const envelopeSelectIndex: number = this._envelopeSelects.indexOf(event.target as any);
 		if (targetSelectIndex != -1) {
 			const combinedValue: number = parseInt(this._targetSelects[targetSelectIndex].value);
 			const target: number = combinedValue % Config.instrumentAutomationTargets.length;
@@ -38,7 +38,7 @@ export class EnvelopeEditor {
 	}
 	
 	private _onClick = (event: MouseEvent): void => {
-		const index: number = this._deleteButtons.indexOf(<any> event.target);
+		const index: number = this._deleteButtons.indexOf(event.target as any);
 		if (index != -1) {
 			this._doc.record(new ChangeRemoveEnvelope(this._doc, index));
 		}
@@ -58,7 +58,7 @@ export class EnvelopeEditor {
 	
 	private _updateTargetOptionVisibility(menu: HTMLSelectElement, instrument: Instrument): void {
 		for (let optionIndex: number = 0; optionIndex < menu.childElementCount; optionIndex++) {
-			const option: HTMLOptionElement = <HTMLOptionElement> menu.children[optionIndex];
+			const option: HTMLOptionElement = menu.children[optionIndex] as HTMLOptionElement;
 			const combinedValue: number = parseInt(option.value);
 			const target: number = combinedValue % Config.instrumentAutomationTargets.length;
 			const index: number = (combinedValue / Config.instrumentAutomationTargets.length) >>> 0;

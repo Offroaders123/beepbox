@@ -56,7 +56,7 @@ export class ImportPrompt implements Prompt {
 			reader.addEventListener("load", (event: Event): void => {
 				this._doc.prompt = null;
 				this._doc.goBackToStart();
-				this._doc.record(new ChangeSong(this._doc, <string>reader.result), true, true);
+				this._doc.record(new ChangeSong(this._doc, reader.result as string), true, true);
 			});
 			reader.readAsText(file);
 		} else if (extension == "midi" || extension == "mid") {
@@ -64,7 +64,7 @@ export class ImportPrompt implements Prompt {
 			reader.addEventListener("load", (event: Event): void => {
 				this._doc.prompt = null;
 				this._doc.goBackToStart();
-				this._parseMidiFile(<ArrayBuffer>reader.result);
+				this._parseMidiFile(reader.result as ArrayBuffer);
 			});
 			reader.readAsArrayBuffer(file);
 		} else {

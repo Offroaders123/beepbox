@@ -18,8 +18,8 @@ function lerp(low: number, high: number, t: number): number {
 }
 
 function save(blob: Blob, name: string): void {
-	if ((<any>navigator).msSaveOrOpenBlob) {
-		(<any>navigator).msSaveOrOpenBlob(blob, name);
+	if ((navigator as any).msSaveOrOpenBlob) {
+		(navigator as any).msSaveOrOpenBlob(blob, name);
 		return;
 	}
 	
@@ -147,16 +147,16 @@ export class ExportPrompt implements Prompt {
 	}
 	
 	private _whenKeyPressed = (event: KeyboardEvent): void => {
-		if ((<Element> event.target).tagName != "BUTTON" && event.keyCode == 13) { // Enter key
+		if ((event.target as Element).tagName != "BUTTON" && event.keyCode == 13) { // Enter key
 			this._export();
 		}
 	}
 	
 	private static _validateFileName(event: Event): void {
-		const input: HTMLInputElement = <HTMLInputElement>event.target;
+		const input: HTMLInputElement = event.target as HTMLInputElement;
 		const deleteChars = /[\+\*\$\?\|\{\}\\\/<>#%!`&'"=:@]/gi;
 		if (deleteChars.test(input.value)) {
-			let cursorPos: number = <number>input.selectionStart;
+			let cursorPos: number = input.selectionStart as number;
 			input.value = input.value.replace(deleteChars, "");
 			cursorPos--;
 			input.setSelectionRange(cursorPos, cursorPos);
@@ -164,7 +164,7 @@ export class ExportPrompt implements Prompt {
 	}
 	
 	private static _validateNumber(event: Event): void {
-		const input: HTMLInputElement = <HTMLInputElement>event.target;
+		const input: HTMLInputElement = event.target as HTMLInputElement;
 		input.value = Math.floor(Math.max(Number(input.min), Math.min(Number(input.max), Number(input.value)))) + "";
 	}
 	
@@ -285,7 +285,7 @@ export class ExportPrompt implements Prompt {
 			this._statusMessage.style.display = "block";
 			this._statusMessage.textContent = "Compressing...";
 			
-			const lamejs: any = (<any> window)["lamejs"];
+			const lamejs: any = (window as any)["lamejs"];
 			const channelCount: number = 2;
 			const kbps: number = 192;
 			const sampleBlockSize: number = 1152;

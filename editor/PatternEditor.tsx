@@ -11,7 +11,7 @@ import {ChangeSequence, UndoableChange} from "./Change.js";
 import {ChangeChannelBar, ChangeDragSelectedNotes, ChangeEnsurePatternExists, ChangeNoteTruncate, ChangeNoteAdded, ChangePatternSelection, ChangePinTime, ChangeSizeBend, ChangePitchBend, ChangePitchAdded} from "./changes.js";
 
 function makeEmptyReplacementElement<T extends Node>(node: T): T {
-	const clone: T = <T> node.cloneNode(false);
+	const clone: T = node.cloneNode(false) as T;
 	node.parentNode!.replaceChild(clone, node);
 	return clone;
 }

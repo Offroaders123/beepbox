@@ -17,7 +17,7 @@ export class MuteEditor {
 	}
 	
 	private _onClick = (event: MouseEvent): void => {
-		const index = this._buttons.indexOf(<HTMLButtonElement> event.target);
+		const index = this._buttons.indexOf(event.target as HTMLButtonElement);
 		if (index == -1) return;
 		this._doc.song.channels[index].muted = !this._doc.song.channels[index].muted;
 		this._doc.notifier.changed();

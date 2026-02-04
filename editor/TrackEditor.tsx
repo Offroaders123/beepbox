@@ -188,7 +188,7 @@ export class TrackEditor {
 			this._select.appendChild(HTML.option({value: i}, i));
 		}
 		for (let i: number = patternCount; i < this._renderedPatternCount; i++) {
-			this._select.removeChild(<Node> this._select.lastChild);
+			this._select.removeChild(this._select.lastChild as Node);
 		}
 		this._renderedPatternCount = patternCount;
 		const selectedPattern: number = this._doc.song.channels[this._doc.channel].bars[this._doc.bar];

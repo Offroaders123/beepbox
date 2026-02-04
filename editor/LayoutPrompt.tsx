@@ -68,7 +68,7 @@ export class LayoutPrompt implements Prompt {
 		this._cancelButton.addEventListener("click", this._close);
 		this.container.addEventListener("keydown", this._whenKeyPressed);
 		
-		(<any> this._form.elements)["layout"].value = this._doc.prefs.layout;
+		(this._form.elements as any)["layout"].value = this._doc.prefs.layout;
 	}
 	
 	private _close = (): void => { 
@@ -82,13 +82,13 @@ export class LayoutPrompt implements Prompt {
 	}
 	
 	private _whenKeyPressed = (event: KeyboardEvent): void => {
-		if ((<Element> event.target).tagName != "BUTTON" && event.keyCode == 13) { // Enter key
+		if ((event.target as Element).tagName != "BUTTON" && event.keyCode == 13) { // Enter key
 			this._confirm();
 		}
 	}
 	
 	private _confirm = (): void => { 
-		this._doc.prefs.layout = (<any> this._form.elements)["layout"].value;
+		this._doc.prefs.layout = (this._form.elements as any)["layout"].value;
 		this._doc.prefs.save();
 		Layout.setLayout(this._doc.prefs.layout);
 		this._close();

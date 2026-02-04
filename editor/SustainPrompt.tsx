@@ -56,7 +56,7 @@ export class SustainPrompt implements Prompt {
 	}
 	
 	private _whenKeyPressed = (event: KeyboardEvent): void => {
-		if ((<Element> event.target).tagName != "BUTTON" && event.keyCode == 13) { // Enter key
+		if ((event.target as Element).tagName != "BUTTON" && event.keyCode == 13) { // Enter key
 			this._saveChanges();
 		}
 	}
@@ -64,7 +64,7 @@ export class SustainPrompt implements Prompt {
 	private _saveChanges = (): void => {
 		if (Config.enableAcousticSustain) {
 			const group: ChangeGroup = new ChangeGroup();
-			group.append(new ChangeStringSustainType(this._doc, <any> Config.sustainTypeNames.indexOf(this._typeSelect.value)));
+			group.append(new ChangeStringSustainType(this._doc, Config.sustainTypeNames.indexOf(this._typeSelect.value) as any));
 			this._doc.prompt = null;
 			this._doc.record(group, true);
 		} else {

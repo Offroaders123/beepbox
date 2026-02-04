@@ -651,10 +651,10 @@ export class SongEditor {
 		
 		// Sorry, bypassing typescript type safety on this function because I want to use the new "passive" option.
 		//this._trackAndMuteContainer.addEventListener("scroll", this._onTrackAreaScroll, {capture: false, passive: true});
-		(<Function>this._trackAndMuteContainer.addEventListener)("scroll", this._onTrackAreaScroll, {capture: false, passive: true});
+		(this._trackAndMuteContainer.addEventListener as Function)("scroll", this._onTrackAreaScroll, {capture: false, passive: true});
 		
 		if (isMobile) {
-			const autoPlayOption: HTMLOptionElement = <HTMLOptionElement> this._optionsMenu.querySelector("[value=autoPlay]");
+			const autoPlayOption: HTMLOptionElement = this._optionsMenu.querySelector("[value=autoPlay]") as HTMLOptionElement;
 			autoPlayOption.disabled = true;
 			autoPlayOption.setAttribute("hidden", "");
 		}
@@ -699,7 +699,7 @@ export class SongEditor {
 	}
 	
 	private _updateLayoutOption(): void {
-		const layoutOption: HTMLOptionElement = <HTMLOptionElement> this._optionsMenu.querySelector("[value=layout]");
+		const layoutOption: HTMLOptionElement = this._optionsMenu.querySelector("[value=layout]") as HTMLOptionElement;
 		if (window.screen.availWidth < 710 || window.screen.availHeight < 710) {
 			layoutOption.disabled = true;
 			layoutOption.setAttribute("hidden", "");
@@ -858,7 +858,7 @@ export class SongEditor {
 			"　Set Up Note Recording...",
 		];
 		for (let i: number = 0; i < optionCommands.length; i++) {
-			const option: HTMLOptionElement = <HTMLOptionElement> this._optionsMenu.children[i + 1];
+			const option: HTMLOptionElement = this._optionsMenu.children[i + 1] as HTMLOptionElement;
 			if (option.textContent != optionCommands[i]) option.textContent = optionCommands[i];
 		}
 		
@@ -877,7 +877,7 @@ export class SongEditor {
 			let effectFlag: number = Config.effectOrder[i];
 			const selected: boolean = ((instrument.effects & (1 << effectFlag)) != 0);
 			const label: string = (selected ? "✓ " : "　") + Config.effectNames[effectFlag];
-			const option: HTMLOptionElement = <HTMLOptionElement> this._effectsSelect.children[i + 1];
+			const option: HTMLOptionElement = this._effectsSelect.children[i + 1] as HTMLOptionElement;
 			if (option.textContent != label) option.textContent = label;
 		}
 		
@@ -1794,7 +1794,7 @@ export class SongEditor {
 	}
 	
 	private _whenSetScale = (): void => {
-		if (isNaN(<number> <unknown> this._scaleSelect.value)) {
+		if (isNaN(this._scaleSelect.value as unknown as number)) {
 			switch (this._scaleSelect.value) {
 				case "forceScale":
 					this.doc.selection.forceScale();
@@ -1807,7 +1807,7 @@ export class SongEditor {
 	}
 	
 	private _whenSetKey = (): void => {
-		if (isNaN(<number> <unknown> this._keySelect.value)) {
+		if (isNaN(this._keySelect.value as unknown as number)) {
 			switch (this._keySelect.value) {
 				case "detectKey":
 					this.doc.record(new ChangeDetectKey(this.doc));
@@ -1820,7 +1820,7 @@ export class SongEditor {
 	}
 	
 	private _whenSetRhythm = (): void => {
-		if (isNaN(<number> <unknown> this._rhythmSelect.value)) {
+		if (isNaN(this._rhythmSelect.value as unknown as number)) {
 			switch (this._rhythmSelect.value) {
 				case "forceRhythm":
 					this.doc.selection.forceRhythm();
@@ -1841,7 +1841,7 @@ export class SongEditor {
 	}
 	
 	private _setPreset(preset: string): void {
-		if (isNaN(<number> <unknown> preset)) {
+		if (isNaN(preset as unknown as number)) {
 			switch (preset) {
 				case "copyInstrument":
 					this._copyInstrument();
@@ -1876,7 +1876,7 @@ export class SongEditor {
 		} else if (event.target == this._instrumentRemoveButton) {
 			this.doc.record(new ChangeRemoveChannelInstrument(this.doc));
 		} else {
-			const index: number = this._instrumentButtons.indexOf(<any>event.target);
+			const index: number = this._instrumentButtons.indexOf(event.target as any);
 			if (index != -1) {
 				this.doc.selection.selectInstrument(index);
 			}
@@ -1959,7 +1959,7 @@ export class SongEditor {
 				this._copyTextToClipboard(new URL("#" + this.doc.song.toBase64String(), location.href).href);
 				break;
 			case "shareUrl":
-				(<any>navigator).share({ url: new URL("#" + this.doc.song.toBase64String(), location.href).href });
+				(navigator as any).share({ url: new URL("#" + this.doc.song.toBase64String(), location.href).href });
 				break;
 			case "shortenUrl":
 				const songUrl: string = new URL("#" + this.doc.song.toBase64String(), location.href).href;

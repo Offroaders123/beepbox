@@ -71,7 +71,7 @@ export class BeatsPerBarPrompt implements Prompt {
 	}
 	
 	private _whenKeyPressed = (event: KeyboardEvent): void => {
-		if ((<Element> event.target).tagName != "BUTTON" && event.keyCode == 13) { // Enter key
+		if ((event.target as Element).tagName != "BUTTON" && event.keyCode == 13) { // Enter key
 			this._saveChanges();
 		}
 	}
@@ -86,7 +86,7 @@ export class BeatsPerBarPrompt implements Prompt {
 	}
 	
 	private static _validateNumber(event: Event): void {
-		const input: HTMLInputElement = <HTMLInputElement>event.target;
+		const input: HTMLInputElement = event.target as HTMLInputElement;
 		input.value = String(BeatsPerBarPrompt._validate(input));
 	}
 	

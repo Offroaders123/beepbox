@@ -11,7 +11,7 @@ function scrollBarTestFunc(): void {
 	const scrollBarTest: HTMLDivElement = document.body.appendChild(HTML.div({style: "width:30px; height:30px; overflow: auto;"},
 		HTML.div({style: "width:100%; height:40px"}),
 	));
-	if ((<any>scrollBarTest).firstChild.clientWidth < 30) {
+	if ((scrollBarTest as any).firstChild.clientWidth < 30) {
 		document.documentElement.classList.add("has-classic-scrollbars");
 	}
 	document.body.removeChild(scrollBarTest);

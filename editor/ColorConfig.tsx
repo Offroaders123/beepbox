@@ -313,7 +313,7 @@ export class ColorConfig {
 		if (theme == undefined) theme = this.themes["dark classic"];
 		this._styleElement.textContent = theme;
 		
-		const themeColor = <HTMLMetaElement> document.querySelector("meta[name='theme-color']");
+		const themeColor = document.querySelector("meta[name='theme-color']") as HTMLMetaElement;
 		if (themeColor != null) {
 			themeColor.setAttribute("content", getComputedStyle(document.documentElement).getPropertyValue('--ui-widget-background'));
 		}
