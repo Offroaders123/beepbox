@@ -545,7 +545,7 @@ function onCopyClicked(): void {
 }
 
 function onShareClicked(): void {
-	(<any>navigator).share({ url: location.href });
+	(navigator as any).share({ url: location.href });
 }
 
 if ( top !== self ) {
